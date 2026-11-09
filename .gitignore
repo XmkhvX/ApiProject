@@ -1,0 +1,12 @@
+.venv/
+venv/
+.idea/
+__pycache__/
+*.pyc
+.pytest_cache/
+allure-results/
+allure-report/
+.env
+.env.*
+!.env.example
+resources/urls.properties
