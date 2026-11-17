@@ -1,0 +1,6 @@
+# Bank API configuration
+backendUrl=http://localhost:4111/api
+
+# PostgreSQL database configuration
+# Replace USERNAME and PASSWORD with your local credentials
+dataBaseUrl=postgresql+psycopg2://USERNAME:PASSWORD@localhost:5432/symfony_db

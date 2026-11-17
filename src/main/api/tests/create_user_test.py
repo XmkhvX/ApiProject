@@ -15,8 +15,8 @@ class TestCreateUser:
     def test_create_user_valid(self, api_manager: ApiManager, create_user_request: CreateUserRequest, db_session: Session):
         response = api_manager.admin_steps.create_user(create_user_request)
 
-        assert create_user_request.username == response.username
-        assert create_user_request.role == response.role
+        assert create_user_request.username == response.username, "Имя при создании не валидно имени ответа сервера"
+        assert create_user_request.role == response.role, "Роль при создании не соответсвует роли ответа сервера"
 
         user_from_db = User.get_user_by_username(db_session, create_user_request.username)
         assert user_from_db.username == create_user_request.username, "Созданного пользователя нет в БД"
@@ -24,7 +24,7 @@ class TestCreateUser:
     @pytest.mark.parametrize(
         "username, password",
         [
-            ("абв", "Pas!sw0rd"),
+            ("абв", "Pas!sw0rd"), 
             ("ab", "Pas!sw0rd"),
             ("abv!", "Pas!sw0rd"),
             ("Maxx1", "Pas!sw0rdд"),

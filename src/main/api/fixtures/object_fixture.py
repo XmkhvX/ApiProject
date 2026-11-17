@@ -3,7 +3,6 @@ import logging
 from typing import List, Any
 from src.main.api.classes.api_manager import ApiManager
 from src.main.api.models.create_user_response import CreateUserResponse
-from src.main.api.steps.user_steps import UserSteps
 
 
 @pytest.fixture
