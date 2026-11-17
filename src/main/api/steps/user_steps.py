@@ -45,13 +45,6 @@ class UserSteps(BaseSteps):
         ).post(transfer_user_request)
         return response
 
-    def transfer_invalid(self, create_user_request: CreateUserRequest, transfer_user_request: TransferUserRequest):
-        response=CrudRequester(
-            RequestSpecs.auth_headers(username=create_user_request.username, password=create_user_request.password),
-            Endpoint.TRANSFER,
-            ResponseSpecs.request_bad()
-        ).post(transfer_user_request)
-        return response
     def transfer_invalid_transfer(self, create_user_request: CreateUserRequest, transfer_user_request: TransferUserRequest):
         response=CrudRequester(
             RequestSpecs.auth_headers(username=create_user_request.username, password=create_user_request.password),
